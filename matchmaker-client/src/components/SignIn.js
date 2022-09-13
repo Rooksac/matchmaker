@@ -28,7 +28,7 @@ export default function SignIn({handleLogIn}) {
         <form>
             <label>
                 Username:
-                <input onChange = {handleChange} type="text" name="username" value = {loginInfo.name}/>
+                <input onChange = {handleChange} type="text" name="username" value = {loginInfo.username}/>
             </label>
             <label>
                 Password:

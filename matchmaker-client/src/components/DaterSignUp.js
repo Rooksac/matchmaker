@@ -1,85 +1,55 @@
 import React, {useState} from 'react'
 
 export default function DaterSignUp() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [gender, setGender] = useState(null);
-    const [age, setAge] = useState(0);
-    const [interestedIn, setInterestedIn] = useState(null);
-    const [image, setImage] = useState(null);
+    const initialState = {username: '', password: '', confirmPassword: '', gender: null, age: 0, interestedIn: null, image: null}
+    const [loginInfo, setLoginInfo] = useState(initialState)
 
-    const handleInputChange = (e) => {
-        const {id, value} = e.target;
-        if(id === "username"){
-            setUsername(value);
-        }
-        if(id === "password"){
-            setPassword(value);
-        }
-        if(id === "confirmPassword"){
-            setConfirmPassword(value);
-        }
-        if(id === "gender"){
-            setGender(value);
-        }
-        if(id === "age"){
-            setAge(value);
-        }
-        if(id === "interestedIn"){
-            setInterestedIn(value);
-        }
-        if(id === "image"){
-            setImage(value);
-        }
+
+    function handleChange(e) {
+        let {name, value} = e.target;
+        setLoginInfo({...loginInfo, [name]: value})
     }
 
     const handleSubmit = () => {
-        console.log(username, password, confirmPassword, gender, age, interestedIn, image);
+        
     }
 
   return (
     <div className="form">
         <h2>Make me a match!</h2>
-        <div className="form_body">
-            <div className="username">
+        <form>
+                //username
                 <label className="form_label" for="username">Username</label>
-                <input className="form_input" type="text" id="username" value={username} onChange={(e) => handleInputChange(e)} placeholder="Username"/>
-            </div>
-            <div className="password">
+                <input className="form_input" onChange={handleChange} type="text" name="username" value={loginInfo.username}/>
+                //password
                 <label className="form_label" for="password">Password</label>
-                <input className="form_input" type="password" id="password" value={password} onChange={(e) => handleInputChange(e)} placeholder="Password"/>
-            </div>
-            <div className="confirm_password">
+                <input className="form_input" onChange={handleChange} type="text" name="password" value={loginInfo.password}/>
+                //confirmPassword
                 <label className="form_label" for="confirmPassword">Confirm Password</label>
-                <input className="form_input" type="password" id="confirmPassword" value={confirmPassword} onChange={(e) => handleInputChange(e)} placeholder="Confirm Password"/>
-            </div>
-            <div className="gender">
+                <input className="form_input" onChange={handleChange} type="password" name="confirmPassword" value={loginInfo.confirmPassword}/>
+                //gender with dropdown
                 <label className="form_label" for="gender">Gender</label>
-                <select className="form_input" id="gender" value={gender} onChange={(e) => handleInputChange(e)} name="gender">
+                <select className="form_input" onChange={handleChange} name="gender" value={loginInfo.gender}>
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                     <option value="non-binary">Non-binary</option>
                 </select>
-            </div>
-            <div className="age">
+                //age
                 <label className="form_label" for="age">Age</label>
-                <input className="form_input" type="number" id="age" value={age} onChange={(e) => handleInputChange(e)} name="age" min="21" max="40"/>
-            </div>
-            <div className="interestedIn">
+                <input className="form_input" onChange={handleChange} type="number" name="age" value={loginInfo.age} min="21" max="40"/>
+                //InterestedIn with dropdown
                 <label className="form_label" for="interestedIn">I'm interested in...</label>
-                <select className="form_input" id="interestedIn" value={interestedIn} onChange={(e) => handleInputChange(e)} name="interestedIn">
+                <select className="form_input" onChange={handleChange} name="interestedIn" value={loginInfo.interestedIn}>
                     <option value="female">Females</option>
                     <option value="male">Males</option>
                     <option value="non-binary">Non-binary</option>
                 </select>
-            </div>
-            <div className="image">
+                //image
                 <label className="form_label" for="image">My Photo</label>
-                <input className="form_input" type="image" id="image" alt="my photo here" src="" value={image} onChange={(e) => handleInputChange(e)}/>
-            </div>
-            <button onClick = {() => handleSubmit()} type="submit" class="btn">Register</button>
-        </div>
+                <input className="form_input" onChange={handleChange} type="image" alt="my photo here" src="" name="image" value={loginInfo.image}/> 
+                //submit          
+                <input type="submit" onSubmit ={handleSubmit}/>
+        </form>
     </div>
   )
 }
