@@ -45,13 +45,14 @@ export default function DaterSignUp() {
                 
                 <label className="form_label" for="interestedIn">I'm interested in...</label>
                 <select className="form_input" onChange={handleChange} name="interestedIn" value={loginInfo.interestedIn}>
+                    <option value = ''>--Im interested in meeting...--</option>
                     <option value="female">Females</option>
                     <option value="male">Males</option>
                     <option value="non-binary">Non-binary</option>
                 </select>
                
                 <label className="form_label" for="image">My Photo</label>
-                <input className="form_input" onChange={handleChange} type="image" alt="my photo" src="" name="image" value={loginInfo.image}/> 
+                <input className="form_input" onChange={handleChange} type="text" alt="my photo"gen name="image" value={loginInfo.image}/> 
                        
                 <input type="submit"/>
         </form>

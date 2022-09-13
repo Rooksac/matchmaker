@@ -20,7 +20,8 @@ class ApplicationController < Sinatra::Base
             gender: params[:gender],
             age: params[:age],
             interested_in: params[:interestedIn],
-            image: params[:image]
+            image: params[:image],
+            available?: true 
         )
         dater.to_json
     end
