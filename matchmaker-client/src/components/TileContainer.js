@@ -1,10 +1,10 @@
 import React from 'react'
 import DaterTile from './DaterTile'
 
-export default function () {
+export default function ({tiles}) {
   return (
     <div className="tile-container">
-        <DaterTile />
+      {tiles.map ((tile)=>{<DaterTile dater = {tile}/>})}
     </div>
   )
 }
