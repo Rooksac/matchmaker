@@ -16,11 +16,11 @@ export default function MatchmakerHome({matchmaker}) {
     <div>
 
       <h1>{`Welcome back ${matchmaker[0].username}!`}</h1>
-      {matchmaker[1].length<1?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {matchmaker[1][0]}/>}
-      {matchmaker[1].length<2?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {matchmaker[1][1]}/>}
-      {matchmaker[1].length<3?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {matchmaker[1][2]}/>}
+      {matchmaker[1].length<1?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {matchmaker[1][0]} matchmaker = {matchmaker[0]}/>}
+      {matchmaker[1].length<2?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {matchmaker[1][1]} matchmaker = {matchmaker[0]}/>}
+      {matchmaker[1].length<3?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {matchmaker[1][2]} matchmaker = {matchmaker[0]}/>}
 
-      {showDaters?<TileContainer tiles = {availableClients} />:null}
+      {showDaters?<TileContainer matchmaker = {matchmaker[0]} tiles = {availableClients} />:null}
 
     </div>
   )
