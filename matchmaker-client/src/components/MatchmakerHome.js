@@ -5,10 +5,10 @@ export default function MatchmakerHome({matchmaker}) {
   return (
     <div>
 
-      <h1>{`Welcome back ${matchmaker.username}!`}</h1>
+      <h1>{`Welcome back ${matchmaker[0].username}!`}</h1>
       
 
-      <TileContainer />
+      <TileContainer clients = {matchmaker[1]} />
 
     </div>
   )

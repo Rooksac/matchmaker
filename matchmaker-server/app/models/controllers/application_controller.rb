@@ -4,7 +4,8 @@ class ApplicationController < Sinatra::Base
     post '/login/matchmaker' do
         if Matchmaker.all.exists?(username: params[:username])
             if Matchmaker.find_by_username(params[:username]).password == params[:password]
-                Matchmaker.find_by_username(params[:username]).to_json
+               matchmaker = [Matchmaker.find_by_username(params[:username]), Matchmaker.find_by_username(params[:username]).current_clients]
+               matchmaker.to_json
             else 
                 "Incorrect Password"
             end
