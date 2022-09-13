@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import NewAccount from './NewAccount';
 
 export default function SignIn({handleLogIn}) {
     const initialState = {username: '', password: ''}
@@ -34,6 +35,7 @@ export default function SignIn({handleLogIn}) {
             </label>
             <input type = "submit"/>
         </form>
+        <NewAccount />
     </div>
   )
 }
