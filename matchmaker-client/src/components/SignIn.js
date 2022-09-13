@@ -8,33 +8,31 @@ export default function SignIn({handleLogIn}) {
         let {name, value} = e.target;
         setLoginInfo({...loginInfo, [name]: value})
     }
-    function handleSubmit(loginObj){
-        fetch('https://localhost:9292/login/matchmaker', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(loginObj),
-})
-  .then((response) => response.json())
-  .then((data) => {
-    console.log('Success:', data)
-    handleLogIn(data)
-  })
-  setLoginInfo(initialState)
+    function handleSubmit(e){
+        e.preventDefault()
+        fetch('http://localhost:9292/login/matchmaker', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(loginInfo),
+            })
+        .then((response) => response.json())
+        .then((data) => handleLogIn(data))
+        setLoginInfo(initialState)
     }
   return (
     <div>
-        <form>
+        <form  onSubmit = {handleSubmit}>
             <label>
                 Username:
-                <input onChange = {handleChange} type="text" name="username" value = {loginInfo.name}/>
+                <input onChange = {handleChange} type="text" name="username" value = {loginInfo.username}/>
             </label>
             <label>
                 Password:
-                <input type ="text" name="password" value = {loginInfo.password}/>
+                <input type ="text" name="password" value = {loginInfo.password} onChange = {handleChange} />
             </label>
-            <input type = "submit" onSubmit = {handleSubmit}/>
+            <input type = "submit"/>
         </form>
     </div>
   )

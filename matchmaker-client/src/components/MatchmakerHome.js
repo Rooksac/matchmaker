@@ -1,7 +1,10 @@
 import React from 'react'
 
-export default function MatchmakerHome() {
+export default function MatchmakerHome({matchmaker}) {
   return (
-    <div></div>
+    <div>
+      <h1>{`Welcome back ${matchmaker.username}!`}</h1>
+      
+    </div>
   )
 }
