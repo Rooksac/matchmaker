@@ -45,7 +45,7 @@ export default function DaterSignUp() {
                 </select>
                
                 <label className="form_label" for="image">My Photo</label>
-                <input className="form_input" onChange={handleChange} type="image" alt="my photo here" src="" name="image" value={loginInfo.image}/> 
+                <input className="form_input" onChange={handleChange} type="file" accept="image/png, image/jpeg" name="image" value={loginInfo.image}/> 
                        
                 <input type="submit" onSubmit ={handleSubmit}/>
         </form>
