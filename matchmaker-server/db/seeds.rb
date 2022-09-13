@@ -9,6 +9,7 @@ puts 'seeding daters'
 10.times do |t|
     Dater.create(
         username: Faker::Name.name,
+        password: Faker::Number.number(digits: 5),
         gender: gender[rand(0..2)],
         age: rand(21..40),
         interested_in: gender[rand(0..2)],
