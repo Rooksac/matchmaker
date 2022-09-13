@@ -1,7 +1,10 @@
 import React from 'react'
+import TileContainer from './TileContainer'
 
 export default function MatchmakerHome() {
   return (
-    <div></div>
+    <div>
+      <TileContainer />
+    </div>
   )
 }
