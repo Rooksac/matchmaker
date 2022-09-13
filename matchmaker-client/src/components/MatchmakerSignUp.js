@@ -12,7 +12,7 @@ export default function MatchmakerSignUp() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch("https://localhost:9292/signup/matchmaker", {
+        fetch("http://localhost:9292/signup/matchmakers", {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
@@ -27,7 +27,7 @@ export default function MatchmakerSignUp() {
     <div className="form">
         <h2>Matchmaker matchmaker....</h2>
         <form 
-        // onSubmit={handleSubmit}
+        onSubmit={handleSubmit}
         >
            
              <label className="form_label" for="username">Username</label>
