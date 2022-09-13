@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_13_024947) do
+ActiveRecord::Schema.define(version: 2022_09_13_162909) do
 
   create_table "daters", force: :cascade do |t|
     t.string "username"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2022_09_13_024947) do
   create_table "matchmakers", force: :cascade do |t|
     t.boolean "available?"
     t.string "username"
-    t.integer "password"
+    t.string "password"
   end
 
 end
