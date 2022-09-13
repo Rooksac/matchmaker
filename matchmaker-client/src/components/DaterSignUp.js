@@ -10,14 +10,23 @@ export default function DaterSignUp() {
         setLoginInfo({...loginInfo, [name]: value})
     }
 
-    const handleSubmit = () => {
-        
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch("http://localhost:9292/signup/daters", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+         },
+         body: JSON.stringify(loginInfo),
+        })
+        .then((r) => r.json())
+        .then((data) => console.log(data))
     }
 
   return (
     <div className="form">
         <h2>Make me a match!</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
                 <label className="form_label" for="username">Username</label>
                 <input className="form_input" onChange={handleChange} type="text" name="username" value={loginInfo.username}/>
                 
@@ -42,9 +51,9 @@ export default function DaterSignUp() {
                 </select>
                
                 <label className="form_label" for="image">My Photo</label>
-                <input className="form_input" onChange={handleChange} type="file" accept="image/png, image/jpeg" name="image" value={loginInfo.image}/> 
+                <input className="form_input" onChange={handleChange} type="image" alt="my photo" src="" name="image" value={loginInfo.image}/> 
                        
-                <input type="submit" onSubmit ={handleSubmit}/>
+                <input type="submit"/>
         </form>
     </div>
   )
