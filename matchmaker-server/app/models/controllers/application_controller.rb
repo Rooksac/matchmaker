@@ -13,13 +13,14 @@ class ApplicationController < Sinatra::Base
         matchmaker.to_json
     end
 
-    post '/daters' do
+    post '/signup/daters' do
         dater = Dater.create(
             username: params[:username],
             password: params[:password],
             gender: params[:gender],
             age: params[:age],
-            
+            interested_in: params[:interestedIn],
+            image: params[:image]
         )
         dater.to_json
     end
