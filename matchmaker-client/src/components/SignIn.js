@@ -23,19 +23,23 @@ export default function SignIn({handleLogIn}) {
         setLoginInfo(initialState)
     }
   return (
-    <div>
+    <div className="main-page">
+        
         <form  onSubmit = {handleSubmit}>
-            <label>
+            <label className="sign-in-form">
                 Username:
                 <input onChange = {handleChange} type="text" name="username" value = {loginInfo.username}/>
             </label>
-            <label>
+            <label className="sign-in-form">
                 Password:
                 <input type ="text" name="password" value = {loginInfo.password} onChange = {handleChange} />
             </label>
             <input type = "submit"/>
         </form>
+        
         <NewAccount />
-    </div>
+       
+        </div>
+   
   )
 }
