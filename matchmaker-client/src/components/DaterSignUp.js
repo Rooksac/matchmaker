@@ -62,6 +62,22 @@ export default function DaterSignUp() {
                     <option value="non-binary">Non-binary</option>
                 </select>
             </div>
+            <div className="age">
+                <label className="form_label" for="age">Age</label>
+                <input className="form_input" type="number" id="age" value={age} onChange={(e) => handleInputChange(e)} name="age" min="21" max="40"/>
+            </div>
+            <div className="interestedIn">
+                <label className="form_label" for="interestedIn">I'm interested in...</label>
+                <select className="form_input" id="interestedIn" value={interestedIn} onChange={(e) => handleInputChange(e)} name="interestedIn">
+                    <option value="female">Females</option>
+                    <option value="male">Males</option>
+                    <option value="non-binary">Non-binary</option>
+                </select>
+            </div>
+            <div className="image">
+                <label className="form_label" for="image">My Photo</label>
+                <input className="form_input" type="image" id="image" alt="my photo here" src="" value={image} onChange={(e) => handleInputChange(e)}/>
+            </div>
             <button onClick = {() => handleSubmit()} type="submit" class="btn">Register</button>
         </div>
     </div>
