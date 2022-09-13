@@ -16,8 +16,8 @@ export default function NewAccount() {
   return (
     <div>
         <h2>Join the Matchmaker Community!</h2>
-        <button onClick={handleMatchMakerClick}>Matchmaker Registration</button>
-        <button onClick={handleDaterClick}>Dater Registration</button>
+        <button onClick={handleMatchMakerClick} >Matchmaker Registration</button>
+        <button onClick={handleDaterClick} >Dater Registration</button>
         {clickedMatchMaker ? <MatchmakerSignUp /> : null}
         {clickedDater ? <DaterSignUp /> : null}
     </div>
