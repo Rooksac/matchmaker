@@ -11,7 +11,8 @@ puts 'seeding daters'
         username: Faker::Name.name,
         gender: gender[rand(0..2)],
         age: rand(21..40),
-        interested_in: gender[rand(0..2)] 
+        interested_in: gender[rand(0..2)],
+        available?: true
     )
 end
 
@@ -25,10 +26,12 @@ puts 'seeding matches'
     )
 end
 puts 'seeding matchmakers'
+Matchmaker.create(available?: true, username: 'Test', password: 12345)
 5.times do |t|
     Matchmaker.create(
         available?: true,
-        username: Faker::Name.name
+        username: Faker::Name.name,
+        password: Faker::Number.number(digits: 5)
     )
 end
 puts 'seeding hires'

@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react'
+import '../App.css';
+import SignIn from './SignIn';
+import MatchmakerHome from './MatchmakerHome';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState('')
+
+  function handleLogIn(userObject){
+    setCurrentUser(userObject)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {currentUser===''?<SignIn handleLogIn = {handleLogIn}/>:<MatchmakerHome/>}
     </div>
   );
 }
