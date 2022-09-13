@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import '../App.css';
 import SignIn from './SignIn';
+import NewAccount from './NewAccount';
 
 import MatchmakerHome from './MatchmakerHome';
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       {currentUser===''?<SignIn handleLogIn = {handleLogIn}/>:<MatchmakerHome matchmaker = {currentUser}/>}
+      <NewAccount />
     </div>
   );
 }
