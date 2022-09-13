@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 export default function DaterSignUp() {
-    const initialState = {username: '', password: '', confirmPassword: '', gender: null, age: 0, interestedIn: null, image: null}
+    const initialState = {username: '', password: '', gender: null, age: 0, interestedIn: null, image: null}
     const [loginInfo, setLoginInfo] = useState(initialState)
 
 
@@ -23,9 +23,6 @@ export default function DaterSignUp() {
                 
                 <label className="form_label" for="password">Password</label>
                 <input className="form_input" onChange={handleChange} type="text" name="password" value={loginInfo.password}/>
-                
-                <label className="form_label" for="confirmPassword">Confirm Password</label>
-                <input className="form_input" onChange={handleChange} type="password" name="confirmPassword" value={loginInfo.confirmPassword}/>
                 
                 <label className="form_label" for="gender">Gender</label>
                 <select className="form_input" onChange={handleChange} name="gender" value={loginInfo.gender}>

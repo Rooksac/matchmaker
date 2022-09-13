@@ -11,6 +11,26 @@ class ApplicationController < Sinatra::Base
     #     else 
     #         "Incorrect Username"
     #     end
+
+    post '/signup/matchmakers' do
+        matchmaker = Matchmaker.create(
+            username: params[:username],
+            password: params[:password],
+            available?: true
+        )
+        matchmaker.to_json
+    end
+
+    post '/daters' do
+        dater = Dater.create(
+            username: params[:username],
+            password: params[:password],
+            gender: params[:gender],
+            age: params[:age],
+            
+        )
+        dater.to_json
+    end
     end
 
 
