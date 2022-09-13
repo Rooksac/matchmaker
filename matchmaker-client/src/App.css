@@ -36,3 +36,5 @@
     transform: rotate(360deg);
   }
 }
+
+.tile-container {background-color: red; height: 100px;}

@@ -44,6 +44,29 @@ class ApplicationController < Sinatra::Base
         matchmakers = Matchmaker.all
         matchmakers.to_json
     end
+
+    get '/availabledaters' do
+        daters = Dater.all.where(available?: true)
+        daters.to_json
+    end
+
+    post '/add-client' do
+       hire = Hire.create(
+            dater_id: params[:dater_id],
+            matchmaker_id: params[:matchmaker_id],
+            dater_review: nil,
+            matchmaker_review: nil,
+            terminated_at: nil
+        )
+        hire.to_json
+    end
+
+    patch '/delete-client' do
+        hire = Hire.find_by(matchmaker_id: params[:matchmaker_id], dater_id: params[:dater_id], terminated_at: nil)
+        hire.update(terminated_at: DateTime.now)
+        hire.to_json
+    end
+        
 end
 
     
