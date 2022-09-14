@@ -29,8 +29,8 @@ class ApplicationController < Sinatra::Base
     post '/login/matchmaker' do
         if Matchmaker.all.exists?(username: params[:username])
             if Matchmaker.find_by_username(params[:username]).password == params[:password]
-               matchmaker = [Matchmaker.find_by_username(params[:username]), Matchmaker.find_by_username(params[:username]).current_clients]
-               matchmaker.to_json
+               matchmaker = Matchmaker.find_by_username(params[:username])
+               matchmaker.to_json(include: {hires:{include: :dater}})
             else 
                 "Incorrect Password"
             end
@@ -46,7 +46,7 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/availabledaters' do
-        daters = Dater.all.where(available?: true)
+        daters = Hire.all.where.not(terminated_at: nil).pluck(:dater_id).map{|id| Dater.find(id)}.uniq
         daters.to_json
     end
 
@@ -58,7 +58,6 @@ class ApplicationController < Sinatra::Base
             matchmaker_review: nil,
             terminated_at: nil
         )
-        Dater.find(params[:dater_id]).update(available: false)
         hire.to_json
     end
 
