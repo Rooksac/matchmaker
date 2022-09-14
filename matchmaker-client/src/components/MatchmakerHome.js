@@ -4,7 +4,7 @@ import DaterTile from './DaterTile'
 import ClientTile from './ClientTile'
 
 export default function MatchmakerHome({matchmaker}) {
-  let curClients = matchmaker.hires.filter(hire=>hire.terminated_at===undefined).map(hire=>hire.dater)
+  let curClients = matchmaker.daters
   const [showDaters, setShowDaters] = useState(false)
   const [availableClients, setAvailableClients] = useState([])
   const [roster, setRoster] = useState(curClients)

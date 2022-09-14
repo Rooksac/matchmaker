@@ -7,8 +7,7 @@ class ApplicationController < Sinatra::Base
     post '/signup/matchmakers' do
         matchmaker = Matchmaker.create(
             username: params[:username],
-            password: params[:password],
-            available?: true
+            password: params[:password]
         )
         matchmaker.to_json
     end
@@ -20,8 +19,7 @@ class ApplicationController < Sinatra::Base
             gender: params[:gender],
             age: params[:age],
             interested_in: params[:interestedIn],
-            image: params[:image],
-            available?: true 
+            image: params[:image] 
         )
         dater.to_json
     end
@@ -45,8 +43,9 @@ class ApplicationController < Sinatra::Base
         matchmakers.to_json
     end
 
-    get '/availabledaters' do
-        daters = Hire.all.where.not(terminated_at: nil).pluck(:dater_id).map{|id| Dater.find(id)}.uniq
+    get '/availabledaters/' do
+        hired_daters = Hire.all.pluck(:dater_id).map{|id| Dater.find(id)}.uniq
+        daters = Dater.all.each{|dater| hired_daters.exists?(dater)?dater:nil}
         daters.to_json
     end
 
@@ -54,16 +53,12 @@ class ApplicationController < Sinatra::Base
        hire = Hire.create(
             dater_id: params[:dater_id],
             matchmaker_id: params[:matchmaker_id],
-            dater_review: nil,
-            matchmaker_review: nil,
-            terminated_at: nil
         )
         hire.to_json
     end
 
     patch '/delete-client' do
-        hire = Hire.find_by(matchmaker_id: params[:matchmaker_id], dater_id: params[:dater_id], terminated_at: nil)
-        hire.update(terminated_at: DateTime.now)
+        hire = Hire.find_by(matchmaker_id: params[:matchmaker_id], dater_id: params[:dater_id]).destroy
         hire.to_json
     end
         
