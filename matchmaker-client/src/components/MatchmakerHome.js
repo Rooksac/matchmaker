@@ -8,7 +8,16 @@ export default function MatchmakerHome({matchmaker}) {
   const [showDaters, setShowDaters] = useState(false)
   const [availableClients, setAvailableClients] = useState([])
   const [roster, setRoster] = useState(curClients)
-  function handleClick(){
+  const [findMatchFor, setFindMatchFor] = useState(null)
+  const [eligibleDaters, setEligibleDaters] = useState([])
+  const [showMatches, setShowMatches] = useState(false)
+  function onFindMatchClick(id){
+    setShowMatches(!showMatches)
+    fetch(`http://localhost:9292//find-match/${id}`)
+    .then((res)=>res.json())
+    .then((data)=>setEligibleDaters(data))
+  }
+  function handleClientClick(){
     setShowDaters(!showDaters)
     fetch('http://localhost:9292/availabledaters')
     .then((res)=>res.json())
@@ -27,22 +36,21 @@ export default function MatchmakerHome({matchmaker}) {
     let updatedRoster = availableClients.filter(dater=>dater.id===id)
     setRoster([...roster, ...updatedRoster])
     setShowDaters(!showDaters)
-    console.log(updatedClients)
-    console.log(availableClients)
   }
   return (
 
     <div className="matchmaker-home">
       <div className="matchmaker-clients">
       
-      {roster.length<1?<button onClick = {handleClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[0]} matchmaker = {matchmaker} callback = {onDelete}/>}
-      {roster.length<2?<button onClick = {handleClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[1]} matchmaker = {matchmaker} callback = {onDelete}/>}
-      {roster.length<3?<button onClick = {handleClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[2]} matchmaker = {matchmaker} callback = {onDelete}/>}
+      {roster.length<1?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[0]} matchmaker = {matchmaker} callback = {onDelete}/>}
+      {roster.length<2?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[1]} matchmaker = {matchmaker} callback = {onDelete}/>}
+      {roster.length<3?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[2]} matchmaker = {matchmaker} callback = {onDelete}/>}
       </div>
       <div className="header">
       <h1>{`Welcome back ${matchmaker.username}!`}</h1>
       </div>
       {showDaters?<TileContainer matchmaker = {matchmaker} tiles = {availableClients} callback={onAddToRoster} />:null}
+      {showMatches?<TileContainer matchmaker = {matchmaker} tiles = {eligibleDaters} callback={onAddToRoster} />:null}
 
 
     </div>
