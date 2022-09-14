@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DaterTile({dater, matchmaker, buttonText, callback}) {
+export default function DaterTile({dater, matchmaker, buttonText, onAddToRoster}) {
   function onAddClient(){
     fetch('http://localhost:9292/add-client', {
             method: 'POST',
@@ -11,11 +11,11 @@ export default function DaterTile({dater, matchmaker, buttonText, callback}) {
             })
         .then((response) => response.json())
         .then((data) => console.log(data))
-        callback(dater.id)
+        onAddToRoster(dater.id)
   }
   return (
     <div>
-        <img/>
+        <img src={dater.image}/>
         <p>{dater.username}, Age: {dater.age} interested in: {dater.interested_in}</p>
         <button>View Profile</button>
         <button onClick = {onAddClient}>{buttonText}</button>
