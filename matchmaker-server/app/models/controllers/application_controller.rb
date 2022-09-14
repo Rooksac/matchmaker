@@ -40,6 +40,20 @@ class ApplicationController < Sinatra::Base
 
     end
 
+    # post '/login/dater' do
+    #     if Dater.all.exists?(username: params[:username])
+    #         if Dater.find_by_username(params[:username]).password == params[:password]
+    #            dater = Dater.find_by_username(params[:username])
+    #            dater.to_json
+    #         else 
+    #             "Incorrect Password"
+    #         end
+    #     else 
+    #         "Incorrect Username"
+    #     end
+
+    # end
+
     get '/matchmakers' do
         matchmakers = Matchmaker.all
         matchmakers.to_json
