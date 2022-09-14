@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DaterTile({dater, matchmaker, buttonText}) {
+export default function DaterTile({dater, matchmaker, buttonText, callback}) {
   function onAddClient(){
     fetch('http://localhost:9292/add-client', {
             method: 'POST',
@@ -11,6 +11,7 @@ export default function DaterTile({dater, matchmaker, buttonText}) {
             })
         .then((response) => response.json())
         .then((data) => console.log(data))
+        callback(dater.id)
   }
   return (
     <div>

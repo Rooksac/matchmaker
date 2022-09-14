@@ -58,6 +58,7 @@ class ApplicationController < Sinatra::Base
             matchmaker_review: nil,
             terminated_at: nil
         )
+        Dater.find(params[:dater_id]).update(available: false)
         hire.to_json
     end
 
