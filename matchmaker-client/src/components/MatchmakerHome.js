@@ -13,13 +13,16 @@ export default function MatchmakerHome({matchmaker}) {
     .then((data)=>setAvailableClients(data))
   }
   return (
-    <div>
-
+    <div className="matchmaker-home">
+      <div className="matchmaker-clients">
+      {matchmaker[1].length<1?<button onClick = {handleClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {matchmaker[1][0]}/>}
+      {matchmaker[1].length<2?<button onClick = {handleClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {matchmaker[1][1]}/>}
+      {matchmaker[1].length<3?<button onClick = {handleClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {matchmaker[1][2]}/>}
+      </div>
+      <div className="header">
       <h1>{`Welcome back ${matchmaker[0].username}!`}</h1>
-      {matchmaker[1].length<1?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {matchmaker[1][0]}/>}
-      {matchmaker[1].length<2?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {matchmaker[1][1]}/>}
-      {matchmaker[1].length<3?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {matchmaker[1][2]}/>}
-
+      </div>
+      
       {showDaters?<TileContainer tiles = {availableClients} />:null}
 
     </div>
