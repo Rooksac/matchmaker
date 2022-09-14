@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
         if Matchmaker.all.exists?(username: params[:username])
             if Matchmaker.find_by_username(params[:username]).password == params[:password]
                matchmaker = Matchmaker.find_by_username(params[:username])
-               matchmaker.to_json(include: {hires:{include: :dater}})
+               matchmaker.to_json(include: {daters:{include: :hires}})
             else 
                 "Incorrect Password"
             end
@@ -57,9 +57,10 @@ class ApplicationController < Sinatra::Base
         matchmakers.to_json
     end
 
-    get '/availabledaters/' do
-        hired_daters = Hire.all.pluck(:dater_id).map{|id| Dater.find(id)}.uniq
-        daters = Dater.all.each{|dater| hired_daters.exists?(dater)?dater:nil}
+    get '/availabledaters' do
+        hired_daters = Hire.all.pluck(:dater_id)
+        daters = []
+        Dater.all.map{|dater| if !hired_daters.include?(dater.id) then daters << dater end}
         daters.to_json
     end
 
@@ -74,6 +75,13 @@ class ApplicationController < Sinatra::Base
     patch '/delete-client' do
         hire = Hire.find_by(matchmaker_id: params[:matchmaker_id], dater_id: params[:dater_id]).destroy
         hire.to_json
+    end
+
+    get '/find-match/:id' do
+        matched_daters = Match.all.pluck(:dater_id).uniq.concat(Match.all.pluck(:dated_id).uniq)
+        daters = []
+        Dater.all.where(gender: Dater.find(params[:id]).interested_in).map{|dater| if !matched_daters.include?(dater.id) then daters << dater end}
+        daters.to_json
     end
         
 end

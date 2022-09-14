@@ -18,7 +18,7 @@ export default function ClientTile({dater, matchmaker, callback}) {
     }
   return (
     <div>
-        <img/>
+        <img src={dater.image}/>
         <p>{dater.username}, Age: {dater.age} interested in: {dater.interested_in}</p>
         <button>View Profile</button>
         <button>Find a Match!</button>
