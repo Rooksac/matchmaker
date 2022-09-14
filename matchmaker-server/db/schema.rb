@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_14_151300) do
+ActiveRecord::Schema.define(version: 2022_09_14_154622) do
 
   create_table "daters", force: :cascade do |t|
     t.string "username"
@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 2022_09_14_151300) do
     t.string "interested_in"
     t.string "image"
     t.string "password"
-    t.integer "dating_history"
-    t.integer "matchmaker_history"
   end
 
   create_table "hires", force: :cascade do |t|
@@ -40,7 +38,6 @@ ActiveRecord::Schema.define(version: 2022_09_14_151300) do
   create_table "matchmakers", force: :cascade do |t|
     t.string "username"
     t.string "password"
-    t.integer "client_history"
   end
 
 end
