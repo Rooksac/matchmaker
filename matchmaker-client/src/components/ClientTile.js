@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ClientTile({dater, matchmaker}) {
+export default function ClientTile({dater, matchmaker, callback}) {
     function handleClick(){
         fetch('http://localhost:9292/delete-client', {
   method: 'PATCH',
@@ -14,6 +14,7 @@ export default function ClientTile({dater, matchmaker}) {
 })
   .then((response) => response.json())
   .then((json) => console.log(json));
+  callback(dater.id)
     }
   return (
     <div>
