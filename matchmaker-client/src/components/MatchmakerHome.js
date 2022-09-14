@@ -31,14 +31,19 @@ export default function MatchmakerHome({matchmaker}) {
     console.log(availableClients)
   }
   return (
-    <div>
 
+    <div className="matchmaker-home">
+      <div className="matchmaker-clients">
+      
+      {roster.length<1?<button onClick = {handleClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[0]} matchmaker = {matchmaker} callback = {onDelete}/>}
+      {roster.length<2?<button onClick = {handleClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[1]} matchmaker = {matchmaker} callback = {onDelete}/>}
+      {roster.length<3?<button onClick = {handleClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[2]} matchmaker = {matchmaker} callback = {onDelete}/>}
+      </div>
+      <div className="header">
       <h1>{`Welcome back ${matchmaker.username}!`}</h1>
-      {roster.length<1?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {roster[0]} matchmaker = {matchmaker} callback = {onDelete}/>}
-      {roster.length<2?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {roster[1]} matchmaker = {matchmaker} callback = {onDelete}/>}
-      {roster.length<3?<button onClick = {handleClick}>Search for a client</button>:<ClientTile dater = {roster[2]} matchmaker = {matchmaker} callback = {onDelete}/>}
-
+      </div>
       {showDaters?<TileContainer matchmaker = {matchmaker} tiles = {availableClients} callback={onAddToRoster} />:null}
+
 
     </div>
   )

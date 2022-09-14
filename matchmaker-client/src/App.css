@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 .App {
   text-align: center;
 }
@@ -13,18 +14,18 @@
   color: white;
 } */
 
-.App-link {
+/* .App-link {
   color: #61dafb;
-}
+} */
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 
 
@@ -43,7 +44,68 @@
   margin-top: 100px;
 } */
 
-form {
+/* form {
   padding-top: 200px;
+
+  
+} */
+
+.signin-border {
+  background: white;
+  width: 30%;
+  border-radius: 25px;
+  height: 500px;
+  margin: auto;
 }
+
+.header {
+  background: white;
+  border-radius: 25px;
+  /* box-shadow: 20px 10px 30px 0px rgba(255,133,179,1); */
+  padding: 10px;
+  width: 500px;
+  color: rgba(255,133,179,1);
+  margin-top: 5%;
+  margin-left: 25%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.matchmaker-home {
+  display: flex;
+}
+
+.matchmaker-clients {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  padding: 5px;
+  margin-left: 15%;
+  width: 200px;
+  
+  /* width: 300px;
+  height: 50px; */
+}
+
+.header {
+  background: white;
+  border-radius: 25px;
+  /* box-shadow: 20px 10px 30px 0px rgba(255,133,179,1); */
+  padding: 10px;
+  width: 500px;
+  color: rgba(255,133,179,1);
+  margin-top: 5%;
+  margin-left: 25%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sign-in-form {
+  font-family: 'Montserrat', sans-serif;
+  /* background: white; */
+  border-radius: 25px;
+  margin: 0px;
+  margin-left: 0px;
+  /* width: 500px; */
+}
+
+}
+
 

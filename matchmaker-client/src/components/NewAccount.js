@@ -14,7 +14,7 @@ export default function NewAccount() {
     setClickedDater(clickedDater => !clickedDater)
   }
   return (
-    <div>
+    <div className="signin-border">
         <h2>Join the Matchmaker Community!</h2>
         <button onClick={handleMatchMakerClick} >Matchmaker Registration</button>
         <button onClick={handleDaterClick} >Dater Registration</button>

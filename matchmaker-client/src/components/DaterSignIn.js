@@ -11,7 +11,7 @@ export default function SignIn({handleLogIn}) {
     }
     function handleSubmit(e){
         e.preventDefault()
-        fetch('http://localhost:9292/login/matchmaker', {
+        fetch('http://localhost:9292/login/dater', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -25,8 +25,7 @@ export default function SignIn({handleLogIn}) {
   return (
     <div className="App">
         
-        <form  onSubmit = {handleSubmit}>
-            <div className="sign-in-form">
+        <form  onSubmit = {handleSubmit} className="sign-in-form">
             <label className="sign-in-form">
                 Username:
                 <input onChange = {handleChange} type="text" name="username" value = {loginInfo.username}/>
@@ -35,8 +34,7 @@ export default function SignIn({handleLogIn}) {
                 Password:
                 <input type ="text" name="password" value = {loginInfo.password} onChange = {handleChange} />
             </label>
-            <input type = "submit" className="sign-in-form"/>
-            </div>
+            <input type = "submit"/>
         </form>
         
         <NewAccount />
