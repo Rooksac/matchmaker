@@ -14,13 +14,14 @@ images = ['https://parade.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%
         gender: gender[rand(0..2)],
         age: rand(21..40),
         interested_in: gender[rand(0..2)],
-        image: images[rand(0..4)]
+        image: images[rand(0..4)],
+        
     )
 end
 
-success = [true, false]
+# success = [true, false]
 puts 'seeding matches'
-10.times do |t|
+1.times do |t|
     Match.create(
         dater_id: Dater.all.sample.id,
         dated_id: Dater.all.sample.id,
@@ -28,7 +29,7 @@ puts 'seeding matches'
     )
 end
 puts 'seeding matchmakers'
-Matchmaker.create(available?: true, username: 'Test', password: 12345)
+Matchmaker.create(username: 'Test', password: 12345)
 5.times do |t|
     Matchmaker.create(
         
@@ -37,7 +38,7 @@ Matchmaker.create(available?: true, username: 'Test', password: 12345)
     )
 end
 puts 'seeding hires'
-10.times do |t|
+1.times do |t|
     Hire.create(
         matchmaker_id: Matchmaker.all.sample.id,
         dater_id: Dater.all.sample.id,
