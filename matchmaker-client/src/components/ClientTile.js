@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ClientTile({dater, matchmaker, callback}) {
+export default function ClientTile({dater, matchmaker, callback, onFindMatchClick}) {
     function handleClick(){
         fetch('http://localhost:9292/delete-client', {
   method: 'PATCH',
@@ -21,7 +21,7 @@ export default function ClientTile({dater, matchmaker, callback}) {
         <img src={dater.image}/>
         <p>{dater.username}, Age: {dater.age} interested in: {dater.interested_in}</p>
         <button>View Profile</button>
-        <button>Find a Match!</button>
+        <button onClick = {()=>onFindMatchClick(dater.id)}>Find a Match!</button>
         <button onClick = {handleClick}>Set this client free!</button>
     </div>
   )
