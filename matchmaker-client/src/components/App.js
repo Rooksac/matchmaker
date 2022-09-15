@@ -11,10 +11,14 @@ function App() {
   function handleLogIn(userObject){
     setCurrentUser(userObject)
   }
+
+  function handleLogOut(){
+    setCurrentUser('')
+  }
   return (
     <div className="App">
       
-      {currentUser===''?<SignIn handleLogIn = {handleLogIn}/>:<MatchmakerHome matchmaker = {currentUser}/>}
+      {currentUser===''?<SignIn handleLogIn = {handleLogIn}/>:<MatchmakerHome handleLogOut = {handleLogOut} matchmaker = {currentUser}/>}
       
     </div>
   );
