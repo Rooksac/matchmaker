@@ -44,9 +44,11 @@ export default function MatchmakerHome({matchmaker}) {
 
   function handleMakeAMatch(daterId, datedId){
     let updatedClients = roster.filter(dater=>dater.id!==daterId)
+    console.log(updatedClients)
     setRoster(updatedClients)
     let updatedDaters = eligibleDaters.filter(dater=>dater.id!==datedId)
     setRoster(updatedDaters)
+    setShowMatches(!showMatches)
   }
   useEffect(handleLoad, [])
   return (
