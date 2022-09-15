@@ -1,111 +1,223 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 .App {
   text-align: center;
-}
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
-
-/* .App-link {
-  color: #61dafb;
-} */
-
-/* @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-
-
-.App {
+  /* background: rgb(255,246,0);
+  background: linear-gradient(0deg, rgba(255, 196, 0, 0.915) 0%, rgba(255,133,179,1) 100%); */
+  background-image: url("https://wallpaperaccess.com/full/3554425.jpg");
   height: 100vh;
-  align-items: center;
-  background: rgb(255,246,0);
-  background: linear-gradient(0deg, rgba(255,246,0,0.9150253851540616) 0%, rgba(255,133,179,1) 100%);
-  /* display: block; */
 }
 
-/* .inner-background {
-  background: white;
-  width: 50vh;
-  margin: auto;
-  margin-top: 100px;
+/* .matchmakertitle {
+  margin: 0;
+  align-items: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
 } */
 
-/* form {
-  padding-top: 200px;
+.sign-in-form {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 10px;
+}
 
-  
-} */
+.signin-box {
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  color: rgba(255,133,179,1);
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  opacity: 0.9;
+}
 
-.signin-border {
-  background: white;
+.signin {
+  padding-top: 15px;
+  margin-left: 750px;
+}
+.signup-border {
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
   width: 30%;
   border-radius: 25px;
-  height: 500px;
+  height: 70%;
   margin: auto;
+  margin-top: 7.0%;
+  opacity: 0.9;
 }
 
-.header {
-  background: white;
-  border-radius: 25px;
-  /* box-shadow: 20px 10px 30px 0px rgba(255,133,179,1); */
-  padding: 10px;
-  width: 500px;
-  color: rgba(255,133,179,1);
-  margin-top: 5%;
-  margin-left: 25%;
+.signup-header {
+  padding-top: 70px;
+  font-size: 22px;
+  color: rgb(255, 85, 150);
+  
+}
+
+.signup-button {
   font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(0deg, rgba(255, 36, 193, 0.915) 0%, rgba(255,133,179,1) 100%);
+  color: white;
 }
 
-.matchmaker-home {
-  display: flex;
+.signup-button:hover {
+  cursor: pointer;
+  border: 2px solid rgb(227, 103, 192);
+}
+
+.form {
+  margin-top: auto;
+}
+
+.matchmaker-title-signup {
+  color: rgb(255, 85, 150);
+  font-size: 25px;
+  font-weight: 200;
+  padding-top: 10%;
+}
+
+.form_label {
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px;
+  align-items: center;
+}
+
+.form-name {
+  font-size: 15px;
+}
+
+.form-boxes {
+  font-family: 'Montserrat', sans-serif;
+  padding: 8px;
+  margin: 5px;
+  margin-top: 0px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(255,133,179,1);
+  color: white;
+}
+
+.form-name {
+  color: rgb(255, 85, 150); 
+}
+
+.submit-button {
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  background: linear-gradient(0deg, rgba(255, 36, 193, 0.915) 0%, rgba(255,133,179,1) 100%);
+}
+
+.submit-button:hover {
+  cursor: pointer;
+}
+
+.welcome-matchmaker {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: rgba(255,133,179,1);
+  margin-left: 60%;
+  width: 400px;
+  padding: 10px;
+  position: fixed;
+}
+
+.dater-tile-container {
+  margin-left: 850px;
+}
+
+.dater-tiles {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 36, 193, 0.915);
+  padding: 10px;
+  width: 70%;
+  border-radius: 25px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.dater-buttons {
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(0deg, rgba(255, 36, 193, 0.915) 0%, rgba(255,133,179,1) 100%);
+  color: white;
+}
+
+.dater-buttons:hover {
+  cursor: pointer;
+  border: 2px solid rgb(227, 103, 192);
 }
 
 .matchmaker-clients {
-  display: block;
   font-family: 'Montserrat', sans-serif;
-  padding: 5px;
-  margin-left: 15%;
-  width: 200px;
-  
-  /* width: 300px;
-  height: 50px; */
-}
-
-.header {
-  background: white;
-  border-radius: 25px;
-  /* box-shadow: 20px 10px 30px 0px rgba(255,133,179,1); */
+  margin: 10px;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
   padding: 10px;
-  width: 500px;
-  color: rgba(255,133,179,1);
-  margin-top: 5%;
-  margin-left: 25%;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.sign-in-form {
-  font-family: 'Montserrat', sans-serif;
-  /* background: white; */
+  margin: 5px;
+  border: none;
   border-radius: 25px;
-  margin: 0px;
-  margin-left: 0px;
-  /* width: 500px; */
+  color: white;
+  background: linear-gradient(0deg, rgba(255, 36, 193, 0.915) 0%, rgba(255,133,179,1) 100%);
 }
 
+.matchmaker-clients:hover {
+    cursor: pointer;
+    border: 2px solid rgb(227, 103, 192);
+}
+
+/* .client-tiles {
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: rgba(255,133,179,1);
+  margin-left: 60%;
+  width: 400px;
+  padding: 10px;
+  margin-top: 20px;
+} */
 
 
 
+.matchmaker-home {
+  background: rgb(255,246,0);
+  background: linear-gradient(0deg, rgba(255, 196, 0, 0.915) 0%, rgba(255,133,179,1) 100%);
+}
+
+.myclients {
+  margin-right: 63%;
+  padding-top: 30px;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 30px;
+}
+
+/* .search-clients-container {
+  margin-right: 60%;
+} */
+
+.client-tiles {
+  margin-right: 50%;
+  padding: 20px;
+  margin: 2%;
+  width: 20%;
+  border-radius: 25px;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 36, 193, 0.915); 
+  margin-left: 100px;
+}

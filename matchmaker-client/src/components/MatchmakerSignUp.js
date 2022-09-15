@@ -25,18 +25,20 @@ export default function MatchmakerSignUp() {
     
   return (
     <div className="form">
-        <h2>Matchmaker matchmaker....</h2>
+        <h2 className='matchmaker-title-signup'>Matchmaker matchmaker....</h2>
         <form 
         onSubmit={handleSubmit}
         >
+           <div className="signup-matchmaker">
            
-             <label className="form_label" for="username">Username</label>
-                <input className="form_input" onChange={handleChange} type="text" name="username" value={loginInfo.username}/>
-             
-             <label className="form_label" for="password">Password</label>
-                <input className="form_input" onChange={handleChange} type="text" name="password" value={loginInfo.password}/>
-            
-             <input type="submit"/>
+             <label className="form_label, form-name" for="username">Username</label>
+                <input className="form_label, form-boxes" onChange={handleChange} type="text" name="username" value={loginInfo.username}/>
+            <br />
+             <label className="form_label, form-name" for="password">Password</label>
+                <input className="form_label, form-boxes" onChange={handleChange} type="text" name="password" value={loginInfo.password}/>
+            <br />
+             <input type="submit" className="submit-button"/>
+             </div>
         </form>
         </div>
   )

@@ -13,7 +13,9 @@ function App() {
   }
   return (
     <div className="App">
+      
       {currentUser===''?<SignIn handleLogIn = {handleLogIn}/>:<MatchmakerHome matchmaker = {currentUser}/>}
+      
     </div>
   );
 }

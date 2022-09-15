@@ -14,10 +14,10 @@ export default function NewAccount() {
     setClickedDater(clickedDater => !clickedDater)
   }
   return (
-    <div className="signin-border">
-        <h2>Join the Matchmaker Community!</h2>
-        <button onClick={handleMatchMakerClick} >Matchmaker Registration</button>
-        <button onClick={handleDaterClick} >Dater Registration</button>
+    <div className="signup-border">
+        <h2 className="signup-header">Join the Matchmaker Community!</h2>
+        <button onClick={handleMatchMakerClick} className="signup-button">Matchmaker Registration</button>
+        <button onClick={handleDaterClick} className="signup-button">Dater Registration</button>
         {clickedMatchMaker ? <MatchmakerSignUp /> : null}
         {clickedDater ? <DaterSignUp /> : null}
     </div>
