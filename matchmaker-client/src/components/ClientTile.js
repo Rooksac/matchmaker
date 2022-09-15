@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ClientTile({dater, matchmaker, callback, onFindMatchClick}) {
+export default function ClientTile({dater, matchmaker, callback, onFindMatchClick, findMatchFor}) {
     function handleClick(){
         fetch('http://localhost:9292/delete-client', {
   method: 'PATCH',

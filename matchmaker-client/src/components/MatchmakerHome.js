@@ -11,8 +11,10 @@ export default function MatchmakerHome({matchmaker}) {
   const [roster, setRoster] = useState(curClients)
   const [eligibleDaters, setEligibleDaters] = useState([])
   const [showMatches, setShowMatches] = useState(false)
+  const [lookForMatch, setLookForMatch] = useState('')
   function onFindMatchClick(id){
     setShowMatches(!showMatches)
+    setLookForMatch(id)
     fetch(`http://localhost:9292/find-match/${id}`)
     .then((res)=>res.json())
     .then((data)=>setEligibleDaters(data))
@@ -39,10 +41,18 @@ export default function MatchmakerHome({matchmaker}) {
     setRoster([...roster, ...updatedRoster])
     setShowDaters(!showDaters)
   }
+
+  function handleMakeAMatch(daterId, datedId){
+    let updatedClients = roster.filter(dater=>dater.id!==daterId)
+    setRoster(updatedClients)
+    let updatedDaters = eligibleDaters.filter(dater=>dater.id!==datedId)
+    setRoster(updatedDaters)
+  }
   useEffect(handleLoad, [])
   return (
 
     <div className="matchmaker-home">
+
       <div className="header">
       <h1 className='welcome-matchmaker'>{`Welcome back ${matchmaker.username}!`}</h1>
       </div>
@@ -55,7 +65,8 @@ export default function MatchmakerHome({matchmaker}) {
       </div>
       </div>
       {showDaters?<DaterTileContainer matchmaker = {matchmaker} tiles = {availableClients} onAddToRoster={onAddToRoster} />:null}
-      {showMatches?<MatchTileContainer matchmaker = {matchmaker} tiles = {eligibleDaters} onFindMatchClick={onFindMatchClick} />:null}
+
+      {showMatches?<MatchTileContainer matchmaker = {matchmaker} tiles = {eligibleDaters} onFindMatchClick={onFindMatchClick} lookForMatch = {lookForMatch} handleMakeAMatch = {handleMakeAMatch} />:null}
     </div>
   )
 }
