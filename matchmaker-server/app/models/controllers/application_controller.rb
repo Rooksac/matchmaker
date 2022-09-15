@@ -82,8 +82,13 @@ class ApplicationController < Sinatra::Base
     get '/find-match/:id' do
         matched_daters = Match.all.pluck(:dater_id).uniq.concat(Match.all.pluck(:dated_id).uniq)
         daters = []
-        Dater.all.where(gender: Dater.find(params[:id]).interested_in, interested_in: Dater.find(params[:id]).gender).map{|dater| if !matched_daters.include?(dater.id) then daters << dater end}
-        daters.to_json
+        possible_matches = Dater.all.where(gender: Dater.find(params[:id]).interested_in, interested_in: Dater.find(params[:id]).gender)
+        .map{|dater| if !matched_daters.include?(dater.id) then daters << dater end}
+
+
+       
+        # temp_matches = possible_matches[0].find_all{ |dater| dater.id == params[:id]}
+        possible_matches.to_json
     end
 
     post '/make-match' do
