@@ -15,11 +15,13 @@ export default function MatchTile({dater, matchmaker, lookForMatch, handleMakeAM
         alert('Congratulations!  Your client is now in pre-love!')
     }
   return (
-    <div>
-        <img src={dater.image}/>
-        <p>{dater.username}, Age: {dater.age} interested in: {dater.interested_in}</p>
-        <button>View Profile</button>
-        <button onClick={()=>onMakeAMatch(dater.id)}>Make a Match!</button>
+    <div className="match-a-client">
+        <p>{dater.username}</p>
+        <img src={dater.image} width="200px" height="200px"/>
+        <p>Age: {dater.age}</p>
+        <p>Interested in: {dater.interested_in}</p>
+        <button className='dater-buttons'>View Profile</button>
+        <button onClick={()=>onMakeAMatch(dater.id)} className='dater-buttons'>Make a Match!</button>
     </div>
   )
 }

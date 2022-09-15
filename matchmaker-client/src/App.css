@@ -126,7 +126,7 @@
   border-radius: 25px;
   background: white;
   color: rgba(255,133,179,1);
-  margin-left: 60%;
+  margin-left: 35%;
   width: 400px;
   padding: 10px;
   position: fixed;
@@ -220,4 +220,16 @@
   font-family: 'Montserrat', sans-serif;
   color: rgba(255, 36, 193, 0.915); 
   margin-left: 100px;
+  /* position: fixed; */
 }
+
+.match-a-client {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 36, 193, 0.915);
+  border-radius: 25px;
+  background-color: white;
+  width: 20%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
