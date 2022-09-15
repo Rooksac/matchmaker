@@ -17,7 +17,8 @@ export default function DaterTile({dater, matchmaker, buttonText, onAddToRoster}
     <div className="dater-tiles">
         <p>{dater.username}</p>
         <img src={dater.image} width= "300px" height="300px"/>
-        <p>Age: {dater.age} interested in: {dater.interested_in}</p>
+        <p>Age: {dater.age}</p>
+        <p>Interested in: {dater.interested_in}</p>
         <button className="dater-buttons">View Profile</button>
         <button onClick = {onAddClient} className="dater-buttons">{buttonText}</button>
 

@@ -24,6 +24,7 @@ export default function ClientTile({dater, matchmaker, callback, onFindMatchClic
         <p>Age: {dater.age} interested in: {dater.interested_in}</p>
         <button onClick = {()=>onFindMatchClick(dater.id)} className="matchmaker-clients">{buttonText}</button>
         <button onClick = {handleSetClientFreeClick} className="matchmaker-clients">Set this client free!</button>
+
     </div>
   )
 }
