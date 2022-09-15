@@ -58,6 +58,7 @@ export default function MatchmakerHome({matchmaker}) {
       </div>
       <div>
       <h2 className='myclients'>My Clients:</h2>
+      
       <div className="search-clients-container">
       {roster.length<1?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[0]} matchmaker = {matchmaker} callback = {onDelete} onFindMatchClick = {onFindMatchClick}/>}
       {roster.length<2?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[1]} matchmaker = {matchmaker} callback = {onDelete} onFindMatchClick = {onFindMatchClick}/>}
@@ -67,6 +68,7 @@ export default function MatchmakerHome({matchmaker}) {
       {showDaters?<DaterTileContainer matchmaker = {matchmaker} tiles = {availableClients} onAddToRoster={onAddToRoster} />:null}
 
       {showMatches?<MatchTileContainer matchmaker = {matchmaker} tiles = {eligibleDaters} onFindMatchClick={onFindMatchClick} lookForMatch = {lookForMatch} handleMakeAMatch = {handleMakeAMatch} />:null}
-    </div>
+      </div>
+   
   )
 }
