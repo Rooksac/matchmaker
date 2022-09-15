@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 .App {
   text-align: center;
   /* background: rgb(255,246,0);
@@ -16,7 +16,7 @@
 
 .sign-in-form {
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-left: 10px;
 }
 
@@ -24,8 +24,8 @@
   background-color: white;
   border: none;
   border-radius: 25px;
-  color: rgba(255,133,179,1);
-  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 133, 179, 1);
+  font-family: "Montserrat", sans-serif;
   padding: 10px;
   opacity: 0.9;
 }
@@ -35,13 +35,13 @@
   margin-left: 750px;
 }
 .signup-border {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: white;
   width: 30%;
   border-radius: 25px;
   height: 70%;
   margin: auto;
-  margin-top: 7.0%;
+  margin-top: 7%;
   opacity: 0.9;
 }
 
@@ -49,16 +49,19 @@
   padding-top: 70px;
   font-size: 22px;
   color: rgb(255, 85, 150);
-  
 }
 
 .signup-button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 10px;
   margin: 5px;
   border: none;
   border-radius: 25px;
-  background: linear-gradient(0deg, rgba(255, 36, 193, 0.915) 0%, rgba(255,133,179,1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 36, 193, 0.915) 0%,
+    rgba(255, 133, 179, 1) 100%
+  );
   color: white;
 }
 
@@ -79,7 +82,7 @@
 }
 
 .form_label {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 10px;
   align-items: center;
 }
@@ -89,31 +92,35 @@
 }
 
 .form-boxes {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 8px;
   margin: 5px;
   margin-top: 0px;
   border: none;
   border-radius: 25px;
-  background-color: rgba(255,133,179,1);
+  background-color: rgba(255, 133, 179, 1);
   color: white;
 }
 
 .form-name {
-  color: rgb(255, 85, 150); 
+  color: rgb(255, 85, 150);
 }
 
 .submit-button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 10px;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 10px;
   margin: 5px;
   border: none;
   border-radius: 25px;
   color: white;
-  background: linear-gradient(0deg, rgba(255, 36, 193, 0.915) 0%, rgba(255,133,179,1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 36, 193, 0.915) 0%,
+    rgba(255, 133, 179, 1) 100%
+  );
 }
 
 .submit-button:hover {
@@ -121,11 +128,11 @@
 }
 
 .welcome-matchmaker {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   border: none;
   border-radius: 25px;
   background: white;
-  color: rgba(255,133,179,1);
+  color: rgba(255, 133, 179, 1);
   margin-left: 35%;
   width: 400px;
   padding: 10px;
@@ -133,26 +140,29 @@
 }
 
 .dater-tile-container {
-  margin-left: 850px;
 }
 
 .dater-tiles {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: rgba(255, 36, 193, 0.915);
   padding: 10px;
-  width: 70%;
+  min-width: 70%;
   border-radius: 25px;
   background-color: white;
   margin-bottom: 10px;
 }
 
 .dater-buttons {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 10px;
   margin: 5px;
   border: none;
   border-radius: 25px;
-  background: linear-gradient(0deg, rgba(255, 36, 193, 0.915) 0%, rgba(255,133,179,1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 36, 193, 0.915) 0%,
+    rgba(255, 133, 179, 1) 100%
+  );
   color: white;
 }
 
@@ -162,21 +172,25 @@
 }
 
 .matchmaker-clients {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 10px;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 10px;
   margin: 5px;
   border: none;
   border-radius: 25px;
   color: white;
-  background: linear-gradient(0deg, rgba(255, 36, 193, 0.915) 0%, rgba(255,133,179,1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 36, 193, 0.915) 0%,
+    rgba(255, 133, 179, 1) 100%
+  );
 }
 
 .matchmaker-clients:hover {
-    cursor: pointer;
-    border: 2px solid rgb(227, 103, 192);
+  cursor: pointer;
+  border: 2px solid rgb(227, 103, 192);
 }
 
 /* .client-tiles {
@@ -191,17 +205,19 @@
   margin-top: 20px;
 } */
 
-
-
 .matchmaker-home {
-  background: rgb(255,246,0);
-  background: linear-gradient(0deg, rgba(255, 196, 0, 0.915) 0%, rgba(255,133,179,1) 100%);
+  background: rgb(255, 246, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 196, 0, 0.915) 0%,
+    rgba(255, 133, 179, 1) 100%
+  );
 }
 
 .myclients {
   margin-right: 63%;
   padding-top: 30px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: white;
   font-size: 30px;
 }
@@ -214,22 +230,22 @@
   margin-right: 50%;
   padding: 20px;
   margin: 2%;
-  width: 20%;
+  min-width: 20%;
   border-radius: 25px;
   background-color: white;
-  font-family: 'Montserrat', sans-serif;
-  color: rgba(255, 36, 193, 0.915); 
+  font-family: "Montserrat", sans-serif;
+  color: rgba(255, 36, 193, 0.915);
   margin-left: 100px;
+
   /* position: fixed; */
 }
 
 .match-a-client {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: rgba(255, 36, 193, 0.915);
   border-radius: 25px;
   background-color: white;
-  width: 20%;
+  min-width: 20%;
   padding: 10px;
   margin-bottom: 10px;
 }
-
