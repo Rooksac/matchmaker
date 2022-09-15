@@ -59,9 +59,11 @@ class ApplicationController < Sinatra::Base
 
     get '/availabledaters' do
         hired_daters = Hire.all.pluck(:dater_id)
-        daters = []
-        Dater.all.map{|dater| if !hired_daters.include?(dater.id) then daters << dater end}
-        daters.to_json
+        matched_daters = Match.all.pluck(:dater_id).uniq.concat(Match.all.pluck(:dated_id).uniq)
+        unavailable_daters = hired_daters.uniq.concat(matched_daters)
+        available_daters = []
+        Dater.all.map{|dater| if !unavailable_daters.include?(dater.id) then available_daters << dater end}
+        available_daters.to_json
     end
 
     post '/add-client' do
@@ -80,8 +82,20 @@ class ApplicationController < Sinatra::Base
     get '/find-match/:id' do
         matched_daters = Match.all.pluck(:dater_id).uniq.concat(Match.all.pluck(:dated_id).uniq)
         daters = []
-        Dater.all.where(gender: Dater.find(params[:id]).interested_in).map{|dater| if !matched_daters.include?(dater.id) then daters << dater end}
+        Dater.all.where(gender: Dater.find(params[:id]).interested_in, interested_in: Dater.find(params[:id]).gender).map{|dater| if !matched_daters.include?(dater.id) then daters << dater end}
         daters.to_json
+    end
+
+    post '/make-match' do
+        newmatch = Match.create(
+            dater_id: params[:dater_id],
+            dated_id: params[:dated_id]
+        )
+        Hire.all.where(
+            dater_id: params[:dater_id],
+            matchmaker_id: params[:matchmaker_id]
+        ).destroy_all
+        newmatch.to_json
     end
         
 end
