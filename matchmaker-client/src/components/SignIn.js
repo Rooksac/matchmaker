@@ -24,23 +24,23 @@ export default function SignIn({handleLogIn}) {
     }
   return (
     <div className="App">
-        
+        <div className="sign-in-form">
+         <div className="signin">  
+         {/* <h1 className='matchmakertitle'>Matchmaker</h1> */}
         <form  onSubmit = {handleSubmit}>
-            <div className="sign-in-form">
             <label className="sign-in-form">
-                Username:
-                <input onChange = {handleChange} type="text" name="username" value = {loginInfo.username}/>
-            </label>
+                Username: </label>
+                <input className="signin-box" onChange = {handleChange} type="text" name="username" value = {loginInfo.username}/>
+            
             <label className="sign-in-form">
-                Password:
-                <input type ="text" name="password" value = {loginInfo.password} onChange = {handleChange} />
-            </label>
-            <input type = "submit" className="sign-in-form"/>
-            </div>
+                Password: </label>
+                <input className="signin-box" type ="text" name="password" value = {loginInfo.password} onChange = {handleChange} />
+            <input type = "submit" className="sign-in-form, submit-button"/>
         </form>
-        
+        </div> 
+        </div>
         <NewAccount />
-       
+      
         </div>
    
   )

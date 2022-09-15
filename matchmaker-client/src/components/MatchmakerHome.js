@@ -52,19 +52,21 @@ export default function MatchmakerHome({matchmaker}) {
   return (
 
     <div className="matchmaker-home">
-      <div className="matchmaker-clients">
-      
-      {roster.length<1?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[0]} matchmaker = {matchmaker} callback = {onDelete} onFindMatchClick = {onFindMatchClick} />}
-      {roster.length<2?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[1]} matchmaker = {matchmaker} callback = {onDelete} onFindMatchClick = {onFindMatchClick} />}
-      {roster.length<3?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[2]} matchmaker = {matchmaker} callback = {onDelete} onFindMatchClick = {onFindMatchClick} />}
-      </div>
+
       <div className="header">
-      <h1>{`Welcome back ${matchmaker.username}!`}</h1>
+      <h1 className='welcome-matchmaker'>{`Welcome back ${matchmaker.username}!`}</h1>
+      </div>
+      <div>
+      <h2 className='myclients'>My Clients:</h2>
+      <div className="search-clients-container">
+      {roster.length<1?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[0]} matchmaker = {matchmaker} callback = {onDelete} onFindMatchClick = {onFindMatchClick}/>}
+      {roster.length<2?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[1]} matchmaker = {matchmaker} callback = {onDelete} onFindMatchClick = {onFindMatchClick}/>}
+      {roster.length<3?<button onClick = {handleClientClick} className="matchmaker-clients">Search for a client</button>:<ClientTile dater = {roster[2]} matchmaker = {matchmaker} callback = {onDelete} onFindMatchClick = {onFindMatchClick}/>}
+      </div>
       </div>
       {showDaters?<DaterTileContainer matchmaker = {matchmaker} tiles = {availableClients} onAddToRoster={onAddToRoster} />:null}
+
       {showMatches?<MatchTileContainer matchmaker = {matchmaker} tiles = {eligibleDaters} onFindMatchClick={onFindMatchClick} lookForMatch = {lookForMatch} handleMakeAMatch = {handleMakeAMatch} />:null}
-
-
     </div>
   )
 }

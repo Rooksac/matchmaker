@@ -25,36 +25,36 @@ export default function DaterSignUp() {
 
   return (
     <div className="form">
-        <h2>Make me a match!</h2>
+        <h2 className='matchmaker-title-signup'>Make me a match!</h2>
         <form onSubmit={handleSubmit}>
-                <label className="form_label" for="username">Username</label>
-                <input className="form_input" onChange={handleChange} type="text" name="username" value={loginInfo.username}/>
-                
-                <label className="form_label" for="password">Password</label>
-                <input className="form_input" onChange={handleChange} type="text" name="password" value={loginInfo.password}/>
-                
-                <label className="form_label" for="gender">Gender</label>
-                <select className="form_input" onChange={handleChange} name="gender" value={loginInfo.gender}>
+                <label className="form_label, form-name" for="username">Username</label>
+                <input className="form_label, form-boxes" onChange={handleChange} type="text" name="username" value={loginInfo.username}/>
+                <br />
+                <label className="form_label, form-name" for="password">Password</label>
+                <input className="form_label, form-boxes" onChange={handleChange} type="text" name="password" value={loginInfo.password}/>
+                <br />
+                <label className="form_label, form-name" for="gender">Gender</label>
+                <select className="form_label, form-boxes" onChange={handleChange} name="gender" value={loginInfo.gender}>
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                     <option value="non-binary">Non-binary</option>
                 </select>
-                
-                <label className="form_label" for="age">Age</label>
-                <input className="form_input" onChange={handleChange} type="number" name="age" value={loginInfo.age} min="21" max="40"/>
-                
-                <label className="form_label" for="interestedIn">I'm interested in...</label>
-                <select className="form_input" onChange={handleChange} name="interestedIn" value={loginInfo.interestedIn}>
+                <br />
+                <label className="form_label, form-name" for="age">Age</label>
+                <input className="form_label, form-boxes" onChange={handleChange} type="number" name="age" value={loginInfo.age} min="21" max="40"/>
+                <br />
+                <label className="form_label, form-name" for="interestedIn">I'm interested in...</label>
+                <select className="form_label, form-boxes" onChange={handleChange} name="interestedIn" value={loginInfo.interestedIn}>
                     <option value = ''>--Im interested in meeting...--</option>
                     <option value="female">Females</option>
                     <option value="male">Males</option>
                     <option value="non-binary">Non-binary</option>
                 </select>
-               
-                <label className="form_label" for="image">My Photo</label>
-                <input className="form_input" onChange={handleChange} type="text" alt="my photo"gen name="image" value={loginInfo.image}/> 
-                       
-                <input type="submit"/>
+               <br />
+                <label className="form_label, form-name" for="image">My Photo</label>
+                <input className="form_label, form-boxes" onChange={handleChange} type="text" alt="my photo"gen name="image" value={loginInfo.image}/> 
+               <br /> 
+                <input type="submit" className="submit-button"/>
         </form>
     </div>
   )
