@@ -30,6 +30,7 @@ export default function ClientTile({
       <p>{dater.username}</p>
       <img src={dater.image} width="200px" height="200px" />
       <p>Age: {dater.age}</p>
+      <p>Gender: {dater.gender}</p>
       <p>
          Interested in: {dater.interested_in}
       </p>

@@ -23,7 +23,14 @@ export default function NewAccount() {
       setDatedImages(data[1])
     })  
   }
-  console.log(daterImages)
+  
+  function resetMatchmakerForm(){
+    setClickedMatchMaker(false)
+  }
+
+  function resetDaterForm() {
+    setClickedDater(false)
+  }
   
   
   useEffect(getMatchInfo, [])
@@ -49,8 +56,8 @@ export default function NewAccount() {
           <h2 className="signup-header">Join the Matchmaker Community!</h2>
           <button onClick={handleMatchMakerClick} className="signup-button">Matchmaker Registration</button>
           <button onClick={handleDaterClick} className="signup-button">Dater Registration</button>
-          {clickedMatchMaker ? <MatchmakerSignUp /> : null}
-          {clickedDater ? <DaterSignUp /> : null}
+          {clickedMatchMaker ? <MatchmakerSignUp  reset = {resetMatchmakerForm}/> : null}
+          {clickedDater ? <DaterSignUp reset = {resetDaterForm}/> : null}
       </div>
       </div>
     </div>
