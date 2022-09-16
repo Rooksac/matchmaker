@@ -19,6 +19,7 @@ export default function MatchTile({dater, matchmaker, lookForMatch, handleMakeAM
         <p>{dater.username}</p>
         <img src={dater.image} width="200px" height="200px"/>
         <p>Age: {dater.age}</p>
+        <p>Gender: {dater.gender}</p>
         <p>Interested in: {dater.interested_in}</p>
         <button className='dater-buttons'>View Profile</button>
         <button onClick={()=>onMakeAMatch(dater.id)} className='dater-buttons'>Make a Match!</button>
