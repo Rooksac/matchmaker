@@ -29,8 +29,9 @@ export default function ClientTile({
     <div className="client-tiles">
       <p>{dater.username}</p>
       <img src={dater.image} width="200px" height="200px" />
+      <p>Age: {dater.age}</p>
       <p>
-        Age: {dater.age} interested in: {dater.interested_in}
+         Interested in: {dater.interested_in}
       </p>
       <button
         onClick={() => onFindMatchClick(dater.id)}
