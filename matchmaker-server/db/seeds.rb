@@ -44,7 +44,7 @@ Dater.create(username: "Burt", password: 93746, gender: "male", age: 36, interes
 Dater.create(username: "Big Bird", password: 93746, gender: "non-binary", age: 31, interested_in: "non-binary", image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.tkBgEEPlFx2znmmO4X1YvwHaGY%26pid%3DApi&f=1")
 Dater.create(username: "Cookie Monster", password: 93746, gender: "male", age: 34, interested_in: "non-binary", image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.x7ufBqzVC0c2hm-FVhUzXQHaIS%26pid%3DApi&f=1")
 Dater.create(username: "Towelie", password: 93746, gender: "non-binary", age: 34, interested_in: "female", image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.xByQNTnkEWQeDwTr7DRDbQAAAA%26pid%3DApi&f=1")
-
+Dater.create(username: "Demi", password: 93746, gender: "non-binary", age: 29, interested_in: "male", image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.NHrrzkDv5MchXEMtxyL1CgHaHm%26pid%3DApi&f=1")
 
 # success = [true, false]
 puts 'seeding matches'
