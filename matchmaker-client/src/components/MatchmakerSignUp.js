@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-export default function MatchmakerSignUp() {
+export default function MatchmakerSignUp({reset}) {
     const initialState = {username: '', password: ''}
     const [loginInfo, setLoginInfo] = useState(initialState)
 
@@ -21,6 +21,9 @@ export default function MatchmakerSignUp() {
         })
         .then((r) => r.json())
         .then((data) => console.log(data))
+        setLoginInfo(initialState)
+        reset()
+        alert('Account Created!  Ready to make a match?')
     }
     
   return (

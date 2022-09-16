@@ -20,6 +20,7 @@ Dater.create(username: "Betty", password: 27383, gender: "female", age: 35, inte
 Dater.create(username: "Jessica", password: 28222, gender: "female", age: 38, interested_in: "female", image: "https://m.media-amazon.com/images/I/61pSNqPeNxL._AC_SL1024_.jpg")
 Dater.create(username: "Brooke", password: 94746, gender: "female", age: 22, interested_in: "female", image: "https://i.pinimg.com/originals/98/b0/a2/98b0a2268d333473dcd907dfdb92ee6e.jpg")
 Dater.create(username: "Yzma", password: 92736, gender: "female", age: 39, interested_in: "non-binary", image: "https://i.pinimg.com/736x/86/41/49/8641495167c7e7f0a134daee50d16474--emperors-new-groove-disney-villains.jpg")
+Dater.create(username: "Kermit", password: 93746, gender: "male", age: 29, interested_in: "female", image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.swgklD9RHTjKmR5IQG6z2gHaFq%26pid%3DApi&f=1")
 Dater.create(username: "Cruella", password: 26373, gender: "female", age: 38, interested_in: "non-binary", image: "https://people.com/thmb/YblAegU_aYtabKP9ODJbVSVNRFs=/1080x1080/filters:fill(auto,1)/glenn-close-1-fefb5266623e4d5cb60b5583b6429126.jpg")
 Dater.create(username: "Edna", password: 92737, gender: "non-binary", age: 37, interested_in: "female", image: "http://surbrook.devermore.net/adaptationswesternanimation/incredibles/Edna_Mode.jpg")
 Dater.create(username: "Willy", password: 12836, gender: "non-binary", age: 25, interested_in: "female", image: "https://m.media-amazon.com/images/M/MV5BMTgxMTU5NjEwM15BMl5BanBnXkFtZTcwNDgyNTYyNw@@._V1_.jpg")
@@ -46,31 +47,13 @@ Dater.create(username: "Cookie Monster", password: 93746, gender: "male", age: 3
 Dater.create(username: "Towelie", password: 93746, gender: "non-binary", age: 34, interested_in: "female", image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.xByQNTnkEWQeDwTr7DRDbQAAAA%26pid%3DApi&f=1")
 Dater.create(username: "Demi", password: 93746, gender: "non-binary", age: 29, interested_in: "male", image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.NHrrzkDv5MchXEMtxyL1CgHaHm%26pid%3DApi&f=1")
 
+
 # success = [true, false]
 puts 'seeding matches'
-1.times do |t|
-    Match.create(
-        dater_id: Dater.all.sample.id,
-        dated_id: Dater.all.sample.id,
-        
-    )
-end
+Match.create(dater_id: Dater.find_by_username('Shrek').id, dated_id: Dater.find_by_username('Fiona').id)
+Match.create(dater_id: Dater.find_by_username('Danaerys').id, dated_id: Dater.find_by_username('Tsering').id)
 puts 'seeding matchmakers'
-Matchmaker.create(username: 'Test', password: 12345)
-5.times do |t|
-    Matchmaker.create(
-        
-        username: Faker::Name.name,
-        password: Faker::Number.number(digits: 5)
-    )
-end
-puts 'seeding hires'
-1.times do |t|
-    Hire.create(
-        matchmaker_id: Matchmaker.all.sample.id,
-        dater_id: Dater.all.sample.id,
-        
-    )
-end
+
+
 
 puts "done seeding"
