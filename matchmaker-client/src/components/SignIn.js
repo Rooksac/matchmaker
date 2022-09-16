@@ -22,6 +22,8 @@ export default function SignIn({handleLogIn}) {
         .then((data) => handleLogIn(data))
         setLoginInfo(initialState)
     }
+
+    
   return (
     <div className="App">
         <div className="sign-in-form">

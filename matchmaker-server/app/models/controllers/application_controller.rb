@@ -38,6 +38,16 @@ class ApplicationController < Sinatra::Base
 
     end
 
+    get '/matchhistory' do
+        dater_image = []
+        dated_image = []
+        Match.all.each{ |match| dater_image.push(Dater.find(match.dater_id).image) }
+        Match.all.each{ |match| dated_image.push(Dater.find(match.dated_id).image) }
+        all_daters = []
+        all_daters.push(dater_image)
+        all_daters.push(dated_image)
+        all_daters.to_json
+    end
     # post '/login/dater' do
     #     if Dater.all.exists?(username: params[:username])
     #         if Dater.find_by_username(params[:username]).password == params[:password]

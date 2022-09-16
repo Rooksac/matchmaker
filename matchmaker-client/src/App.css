@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+
 .App {
   text-align: center;
   /* background: rgb(255,246,0);
   background: linear-gradient(0deg, rgba(255, 196, 0, 0.915) 0%, rgba(255,133,179,1) 100%); */
   background-image: url("https://wallpaperaccess.com/full/3554425.jpg");
-  height: 100vh;
+  height: 100%;
 }
 
 /* .matchmakertitle {
@@ -39,9 +41,9 @@
   background-color: white;
   width: 30%;
   border-radius: 25px;
-  height: 70%;
+  height: 600px;
   margin: auto;
-  margin-top: 7%;
+  margin-top: 5%;
   opacity: 0.9;
 }
 
@@ -137,10 +139,11 @@
   width: 400px;
   padding: 10px;
   position: fixed;
+  opacity: 0.9;
 }
 
-.dater-tile-container {
-}
+/* .dater-tile-container {
+} */
 
 .dater-tiles {
   font-family: "Montserrat", sans-serif;
@@ -212,13 +215,14 @@
     rgba(255, 196, 0, 0.915) 0%,
     rgba(255, 133, 179, 1) 100%
   );
+  height: 100vh;
 }
 
 .myclients {
   margin-right: 63%;
   padding-top: 30px;
   font-family: "Montserrat", sans-serif;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 30px;
 }
 
@@ -236,6 +240,7 @@
   font-family: "Montserrat", sans-serif;
   color: rgba(255, 36, 193, 0.915);
   margin-left: 100px;
+  opacity: 0.9;
 
   /* position: fixed; */
 }
@@ -248,4 +253,60 @@
   min-width: 20%;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.flex-homepage {
+  display: flex;
+}
+
+.matchmaker-success {
+  display: grid;
+  margin-left: 10%;
+  grid-template-columns: 200px 200px;
+  grid-row: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin-top: 3%;
+  /* width: 50vw; */
+  /* align-items: center;
+  justify-content: center; */
+  flex-direction: column;
+  overflow: scroll;
+  max-height: 75vh;
+  padding: 2rem;
+}
+
+
+/* .matchmakertitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+} */
+
+.success-images {
+  border-radius: 25px;
+  padding: 10px;
+  margin-bottom: 40px;
+  background-color: white;
+  opacity: 0.9;
+}
+
+.logout-button {
+  font-family: "Montserrat", sans-serif;
+  color: rgba(255, 36, 193, 0.915);
+  background: white;
+  border-radius: 25px;
+  padding: 10px;
+  border: none;
+  margin-top: 8px;
+  margin-left: 90%;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+.successheader {
+  margin-left: 10%;
+  width: 500px;
+  margin-bottom: 0;
+  font-family: "Montserrat", sans-serif;
+  color: white;
 }
